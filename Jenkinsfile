@@ -5,11 +5,10 @@ pipeline {
         stage('Maven Install') {
             agent {
                 docker {
-                    image 'maven:3.5.0'
+                    image 'maven:3.9.6-sapmachine-17'
                 }
             }
             steps {
-                sh 'mvn --version'
                 sh 'mvn clean install'
             }
         }
